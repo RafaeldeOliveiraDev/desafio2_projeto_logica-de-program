@@ -6,6 +6,17 @@ function sortear(){
     let numero;
     let sorteados = [];
 
+    if (de >= ate || quantidade > (ate - de + 1)){
+        alert('Tente novamente e insira com valores do "De" menores que "Até" ou com valores para "Quantidade de número"');
+        reiniciar();
+        alterarStatusBotao();
+        return; 
+        
+    }
+    else{
+        
+    
+
     for(let i = 0; i < quantidade;i++){
         numero = obterNumeroAleatorio(de, ate);
         
@@ -15,6 +26,7 @@ function sortear(){
         }
          sorteados.push(numero);
     }
+}
 
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`
@@ -43,3 +55,12 @@ function reiniciar(){
     document.getElementById('resultado').innerHTML = ' <label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>'
     alterarStatusBotao();
 }
+
+
+     
+        
+    
+        
+    
+        
+    
